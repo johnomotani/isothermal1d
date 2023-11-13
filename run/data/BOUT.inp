@@ -15,7 +15,7 @@ StaggerGrids = true
 MXG = 0
 ixseps1 = 0
 nx = 1
-ny = 64
+ny = 1024
 nz = 1
 
 dy = 1.0 / ny
