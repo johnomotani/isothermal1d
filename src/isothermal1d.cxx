@@ -16,7 +16,7 @@ class Isothermal1D : public PhysicsModel {
     mesh->communicate(n, u);
 
     ddt(n) = -Vpar_Grad_par(u, n) - n * Div_par(u) + density_source;
-    ddt(u) = -Vpar_Grad_par(u, u) - T / n * Grad_par(n);
+    ddt(u) = -Vpar_Grad_par(u, u) - T / n * Grad_par(n) - u*density_source/n;
 
     return 0;
   }
