@@ -1,0 +1,4 @@
+[submodule "BOUT-configs"]
+	path = BOUT-configs
+	url = git@github.com:boutproject/BOUT-configs
+	branch = generic-4.4
