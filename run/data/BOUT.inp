@@ -11,7 +11,6 @@ bndry_ydown = Dirichlet(-1.0)
 bndry_yup = Dirichlet(1.0)
 
 [mesh]
-StaggerGrids = true
 MXG = 0
 ixseps1 = 0
 nx = 1

@@ -5,8 +5,6 @@ class Isothermal1D : public PhysicsModel {
 
   int init(bool UNUSED(restarting)) {
 
-    u.setLocation(CELL_YLOW);
-
     solver->add(n, "n");
     solver->add(u, "u");
 
@@ -17,8 +15,8 @@ class Isothermal1D : public PhysicsModel {
 
     mesh->communicate(n, u);
 
-    ddt(n) = -Vpar_Grad_par(u, n, CELL_CENTRE) - n * Div_par(u, CELL_CENTRE) + density_source;
-    ddt(u) = -Vpar_Grad_par(u, u, CELL_YLOW) - T / interp_to(n, CELL_YLOW) * Grad_par(n, CELL_YLOW);
+    ddt(n) = -Vpar_Grad_par(u, n) - n * Div_par(u) + density_source;
+    ddt(u) = -Vpar_Grad_par(u, u) - T / n * Grad_par(n);
 
     return 0;
   }
