@@ -20,7 +20,7 @@ nz = 1
 dy = 1.0 / ny
 
 [mesh:ddy]
-upwind = u2
+upwind = c2
 
 [solver]
 type = cvode
