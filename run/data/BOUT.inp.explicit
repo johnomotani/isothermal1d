@@ -1,0 +1,30 @@
+nout = 100
+timestep = 1e-1
+
+[n]
+function = 1.0
+bndry_all = free_o3
+
+[u]
+function = (y - pi)/pi
+bndry_ydown = Dirichlet(-1.0)
+bndry_yup = Dirichlet(1.0)
+
+[mesh]
+MXG = 0
+ixseps1 = 0
+nx = 1
+ny = 1024
+nz = 1
+
+dy = 1.0 / ny
+
+[mesh:ddy]
+upwind = c2
+
+[solver]
+#type = cvode
+#mxstep = 1000000
+
+type = rk4
+timestep = 1e-3
